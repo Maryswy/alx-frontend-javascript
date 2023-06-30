@@ -1,27 +1,22 @@
-export class Car {
+export default class Car {
   constructor(brand, motor, color) {
+    // Create objs
     this._brand = brand;
     this._motor = motor;
     this._color = color;
   }
 
-  get brand() {
-    return this._brand;
-  }
-
-  get motor() {
-    return this._motor;
-  }
-
-  get color() {
-    return this._color;
-  }
-
+  // Methods
   cloneCar() {
-    const cloneSymbol = Symbol();
-    const clonedCar = new Car(this._brand, this._motor, this._color);
-    clonedCar[cloneSymbol] = true;
-    return clonedCar;
+    const NewObj = this.constructor[Symbol.species] || this.constructor;
+    const clone = new NewObj();
+    return clone;
   }
 }
 
+/* class TestCar extends Car {};
+ * const tc1 = new TestCar("Nissan", "Turbo", "Pink");
+ * const tc2 = tc1.cloneCar();
+ * console.log(tc1 instanceof TestCar);
+ * console.log(tc2 instanceof TestCar);
+ * console.log(tc1 == tc2); */

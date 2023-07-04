@@ -1,13 +1,21 @@
-// Defines a function that returns a list of students
-function getListStudents() {
+// Defines a function named getListStudents
+export default function getListStudents() {
   // Returns an array of student objects
   return [
-    { id: 1, firstName: "Guillaume", location: "San Francisco" },
-    { id: 2, firstName: "James", location: "Columbia" },
-    { id: 5, firstName: "Serena", location: "San Francisco" }
+    {
+      firstName: 'Guillaume', // First student's first name
+      id: 1, // First student's ID
+      location: 'San Francisco', // First student's location
+    },
+    {
+      firstName: 'James', // Second student's first name
+      id: 2, // Second student's ID
+      location: 'Columbia', // Second student's location
+    },
+    {
+      firstName: 'Serena', // Third student's first name
+      id: 5, // Third student's ID
+      location: 'San Francisco', // Third student's location
+    },
   ];
 }
-
-// Exports the `getListStudents` function as the default export
-export default getListStudents;
-
